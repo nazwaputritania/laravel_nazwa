@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,16 +18,15 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('adminsb/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
+@stack('css')
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('template.sidebar');
+        @include('template.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -38,18 +36,18 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('template.navbar');
+                @include('template.navbar')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                @include('template.main');
+                @include('template.main')
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            @include('template.footer');
+            @include('template.footer')
             <!-- End of Footer -->
 
         </div>
@@ -99,7 +97,7 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('adminsb/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('adminsb/js/demo/chart-pie-demo.js')}}"></script>
-
+@stack('js')
 </body>
 
 </html>
