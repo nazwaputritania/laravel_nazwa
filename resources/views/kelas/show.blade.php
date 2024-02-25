@@ -1,6 +1,6 @@
 @extends('template.master');
 
-@section('title', 'Show Data spp')
+@section('title', 'Show Data Kelas')
 
 @section('content')
   <!-- left column -->
@@ -13,20 +13,20 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="tahun">Tahun</label>
-                <input name="tahun" type="number" class="form-control  placeholder="Tahun" value="{{ $spp->tahun }}" @disabled(true)>
+                <label for="nama_kelas">Nama Kelas</label>
+                <input name="nama_kelas" type="text" class="form-control  placeholder="nama_kelas" value="{{ $kelas->nama_kelas }}" @disabled(true)>
               </div>
               
               <div class="form-group">
-                <label for="nominal">Kompetensi Keahlian</label>
-                <input name="nominal" type="number" class="form-control placeholder="nominal" value="{{ $spp->nominal}}" @disabled(true)>
+                <label for="kompetensi_keahlian">Kompetensi Keahlian</label>
+                <input name="kompetensi_keahlian" type="text" class="form-control placeholder="kompetensi_keahlian" value="{{ $kelas->kompetensi_keahlian}}" @disabled(true)>
               </div>
             </div>
               
             </div>
           </div>
           <div class="px-3 d-flex justify-content-between align-items-center">
-           <a href="{{route('spp.index')}}" class="btn btn-info">Back</a>
+           <a href="{{route('kelas.index')}}" class="btn btn-info">Back</a>
           </div>
         </div>
     </div>

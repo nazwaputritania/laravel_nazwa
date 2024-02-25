@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('adminsb/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
 
-@section('title', 'Data Spp')
+@section('title', 'Data Petugas')
 
 @section('content')
 @if ($message = Session::get('success'))
@@ -20,8 +20,8 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <a href="{{ route('spp.create') }}" class="btn btn-sm btn-outline-primary">
-          <i class="fa fa-plus"> Tambah Spp</i>
+        <a href="{{ route('petugas.create') }}" class="btn btn-sm btn-outline-primary">
+          <i class="fa fa-plus"> Tambah petugas</i>
         </a>
       </div>
       <!-- /.card-header -->
@@ -30,27 +30,31 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Tahun </th>
-              <th>Nominal</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Nama Petugas</th>
+              <th>Level</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            @forelse ($spp as $key => $value)
+            @forelse ($petugass as $key => $value)
               <tr>
                 <td> {{ $key + 1 }} </td>
-                <td> {{ $value->tahun }} </td>
-                <td> {{ $value->nominal }} </td>
+                <td> {{ $value->username }} </td>
+                <td> {{ $value->password }} </td>
+                <td> {{ $value->nama_petugas }} </td>
+                <td> {{ $value->level }} </td>
                 <td>
-                  <a href="{{ route('spp.show', $value->id_spps) }}"
+                  <a href="{{ route('petugas.show', $value->id_petugass) }}"
                       class="btn btn-sm btn-info">
                       Detail
                   </a>
-                  <a href="{{ route('spp.edit', $value->id_spps) }}"
+                  <a href="{{ route('petugas.edit', $value->id_petugass) }}"
                       class="btn btn-sm btn-primary">
                       Edit
                   </a>
-                  <form action="{{ route('spp.destroy', $value->id_spps) }}"
+                  <form action="{{ route('petugas.destroy', $value->id_petugass) }}"
                       method="POST" style="display: inline;">
                       @csrf
                       @method('DELETE')

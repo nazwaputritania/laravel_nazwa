@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('adminsb/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
 
-@section('title', 'Data Spp')
+@section('title', 'Data Kelas')
 
 @section('content')
 @if ($message = Session::get('success'))
@@ -20,8 +20,8 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <a href="{{ route('spp.create') }}" class="btn btn-sm btn-outline-primary">
-          <i class="fa fa-plus"> Tambah Spp</i>
+        <a href="{{ route('kelas.create') }}" class="btn btn-sm btn-outline-primary">
+          <i class="fa fa-plus"> Tambah Kelas</i>
         </a>
       </div>
       <!-- /.card-header -->
@@ -30,27 +30,27 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Tahun </th>
-              <th>Nominal</th>
+              <th>Nama Kelas</th>
+              <th>Kompetensi Keahlian</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            @forelse ($spp as $key => $value)
+            @forelse ($kelass as $key => $value)
               <tr>
                 <td> {{ $key + 1 }} </td>
-                <td> {{ $value->tahun }} </td>
-                <td> {{ $value->nominal }} </td>
+                <td> {{ $value->nama_kelas }} </td>
+                <td> {{ $value->kompetensi_keahlian }} </td>
                 <td>
-                  <a href="{{ route('spp.show', $value->id_spps) }}"
+                  <a href="{{ route('kelas.show', $value->id_kelass) }}"
                       class="btn btn-sm btn-info">
                       Detail
                   </a>
-                  <a href="{{ route('spp.edit', $value->id_spps) }}"
+                  <a href="{{ route('kelas.edit', $value->id_kelass) }}"
                       class="btn btn-sm btn-primary">
                       Edit
                   </a>
-                  <form action="{{ route('spp.destroy', $value->id_spps) }}"
+                  <form action="{{ route('kelas.destroy', $value->id_kelass) }}"
                       method="POST" style="display: inline;">
                       @csrf
                       @method('DELETE')
